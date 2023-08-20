@@ -14,13 +14,12 @@ namespace Product.Domain.Aggregates.Users
             
         }
         public User(string name, string family, string userName, string email, string password, Gender gender,
-            IUserBcScopeValidation bcScopeValidation, IPasswordService passwordService)
+            IUserBcScopeValidation bcScopeValidation)
         {
             Name = name;
             Family = family;
             UserName = userName;
             Email = email;
-            Password = passwordService.HashPassword(password, password);
             Gender = gender;
             userRoles = new List<UserRole>();
             tokens = new List<Token>();

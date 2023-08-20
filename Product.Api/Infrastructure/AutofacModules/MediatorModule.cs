@@ -1,8 +1,8 @@
 ﻿using System.Reflection;
 using Autofac;
 using Product.Api.Application.Behaviors;
+using Product.Api.Application.Commands.Users;
 using MediatR;
-using Product.Api.Application.Commands.Products;
 
 namespace Product.Api.Infrastructure.AutofacModules;
 
@@ -14,7 +14,7 @@ public class MediatorModule : Autofac.Module
             .AsImplementedInterfaces();
 
         // Register all the Command classes (they implement IRequestHandler) in assembly holding the Commands
-        builder.RegisterAssemblyTypes(typeof(AddProductCommandHandler).GetTypeInfo().Assembly)
+        builder.RegisterAssemblyTypes(typeof(TestCommandHandler).GetTypeInfo().Assembly)
             .AsClosedTypesOf(typeof(IRequestHandler<,>));
 
         // Register the Command's Validators (Validators based on FluentValidation library)

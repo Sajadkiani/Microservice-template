@@ -3,6 +3,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using Product.Api.Application.IntegrationEvents;
 using Product.Api.Infrastructure.Exceptions;
+using Product.Api.Infrastructure.Extensions;
 using Product.Infrastructure.EF;
 using MediatR;
 using Microsoft.EntityFrameworkCore;

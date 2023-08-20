@@ -1,7 +1,7 @@
 using System;
 using System.Reflection;
 using System.Text;
-using Product.Api.Grpc.Services;
+using Product.Api.Grpc;
 using Product.Api.Infrastructure.Extensions;
 using Product.Api.Infrastructure.Security;
 using Product.Infrastructure.EF;
@@ -95,7 +95,7 @@ namespace Product.Api
 
             app.UseAuthentication();
             app.UseAuthorization();
-            app.MapGrpcService<TestGrpcService>();
+            app.MapGrpcService<AuthGrpcService>();
             app.UseEndpoints(endpoints => { endpoints.MapControllers(); });
         }
     }

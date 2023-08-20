@@ -10,22 +10,14 @@
     <PackageReference Include="Autofac" Version="7.0.1" />
     <PackageReference Include="Autofac.Extensions.DependencyInjection" Version="8.0.0" />
     <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="12.0.1" />
-    <PackageReference Include="Google.Protobuf" Version="3.24.0" />
-    <PackageReference Include="Grpc.AspNetCore" Version="2.55.0" />
-    <PackageReference Include="Grpc.Net.Client" Version="2.55.0" />
-    <PackageReference Include="Grpc.Tools" Version="2.57.0">
-      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
-      <PrivateAssets>all</PrivateAssets>
-    </PackageReference>
-    <!-- <PackageReference Include="Elastic.Serilog.Sinks" Version="8.6.0" /> -->
     <PackageReference Include="Hellang.Middleware.ProblemDetails" Version="6.5.1" />
     <PackageReference Include="MassTransit" Version="8.0.15" />
     <PackageReference Include="MassTransit.RabbitMQ" Version="8.0.15" />
     <PackageReference Include="Microsoft.Extensions.Hosting" Version="7.0.1" />
     <PackageReference Include="MediatR" Version="12.0.1" />
-<!--    <PackageReference Include="MediatR.Extensions.Microsoft.DependencyInjection" Version="12.0.1" />-->
+    <PackageReference Include="MediatR.Extensions.Microsoft.DependencyInjection" Version="11.1.0" />
     <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="7.0.5" />
-<!--    <PackageReference Include="Microsoft.AspNetCore.Product.EntityFrameworkCore" Version="7.0.5" />-->
+    <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="7.0.5" />
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="7.0.5" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="7.0.5">
       <PrivateAssets>all</PrivateAssets>
@@ -44,17 +36,11 @@
     <PackageReference Include="Steeltoe.Discovery.ClientCore" Version="3.2.3" />
     <PackageReference Include="Steeltoe.Discovery.Eureka" Version="3.2.3" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.5.0" />
-    <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="6.30.1" />
+    <PackageReference Include="System.IDentityModel.Tokens.Jwt" Version="6.30.1" />
   </ItemGroup>
 
   <ItemGroup>
     <Folder Include="Application\IntegrationEvents\EventHandling" />
-    <Folder Include="Infrastructure" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Protobuf Include="Grpc\ServerProtos\test.proto" GrpcServices="Server" />
-    <Protobuf Include="Grpc\ClientProtos\test.proto" GrpcServices="Client" />
   </ItemGroup>
 
   <ItemGroup>

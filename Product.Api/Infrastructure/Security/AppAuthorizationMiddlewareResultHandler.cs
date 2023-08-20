@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IdentityModel.Tokens.Jwt;
 using System.Text.Encodings.Web;
 using System.Threading.Tasks;
 using Product.Api.Infrastructure.Consts;
@@ -9,7 +10,6 @@ using Microsoft.AspNetCore.Authentication;
 using Microsoft.Extensions.Caching.Memory;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
-using System.IdentityModel.Tokens.Jwt;
 
 namespace Product.Api.Infrastructure.Security;
 

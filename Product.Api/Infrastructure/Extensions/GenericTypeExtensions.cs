@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Linq;
 
-namespace Product.Api.Infrastructure.Exceptions;
+namespace Product.Api.Infrastructure.Extensions;
 
 public static class GenericTypeExtensions
 {

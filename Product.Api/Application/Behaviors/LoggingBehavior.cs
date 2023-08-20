@@ -1,6 +1,7 @@
 ﻿using System.Threading;
 using System.Threading.Tasks;
 using Product.Api.Infrastructure.Exceptions;
+using Product.Api.Infrastructure.Extensions;
 using MediatR;
 using Microsoft.Extensions.Logging;
 
