@@ -1,6 +1,6 @@
 ﻿using System.Text;
 
-namespace Product.Infrastructure.EF.Utils;
+namespace Product.Infrastructure.Utils;
 
 public interface IAppRandoms
 {

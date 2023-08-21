@@ -1,13 +1,12 @@
 ﻿using System;
 using System.Threading;
 using System.Threading.Tasks;
+using EventBus.Extensions;
 using Product.Api.Application.IntegrationEvents;
-using Product.Api.Infrastructure.Exceptions;
-using Product.Api.Infrastructure.Extensions;
-using Product.Infrastructure.EF;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
+using Product.Infrastructure.Data.EF;
 using Serilog.Context;
 
 namespace Product.Api.Application.Behaviors;

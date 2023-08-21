@@ -5,13 +5,12 @@ using System.Reflection;
 using System.Text.Json;
 using System.Threading.Tasks;
 using EventBus.Abstractions;
-using Product.Api.Infrastructure.Exceptions;
-using Product.Infrastructure.EF;
 using IntegrationEventLogEF;
 using IntegrationEventLogEF.Services;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
-using ApplicationException = Product.Api.Infrastructure.Exceptions.ApplicationException;
+using Product.Infrastructure.Data.EF;
+using Product.Infrastructure.Exceptions;
 
 namespace Product.Api.Application.IntegrationEvents;
 
@@ -60,7 +59,7 @@ public class IntegrationEventService : IIntegrationEventService
             var eventType = eventTypes.FirstOrDefault(item => item.Name == logEvt.EventTypeName);
             if (eventType is null)
             {
-                throw new ApplicationException.Internal(AppMessages.InternalError);
+                throw new MyApplicationException.Internal(AppMessages.InternalError);
             }
 
             var deserializedEvent = JsonSerializer.Deserialize(logEvt.Content, eventType);

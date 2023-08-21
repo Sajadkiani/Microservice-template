@@ -29,33 +29,10 @@
         <ProjectReference Include="..\Product.Domain\Product.Domain.csproj" />
         <ProjectReference Include="..\BuildingBlocks\IntegrationEventLogEF\IntegrationEventLogEF.csproj" />
     </ItemGroup>
-
-    <ItemGroup>
-        <Protobuf Include="Clients\Grpc\ClientProtos\test.proto">
-            <GrpcServices>Client</GrpcServices>
-            <Access>Public</Access>
-            <ProtoCompile>True</ProtoCompile>
-            <CompileOutputs>True</CompileOutputs>
-            <OutputDir>obj\Debug\net7.0\</OutputDir>
-            <Generator>MSBuild:Compile</Generator>
-        </Protobuf>
-        <Protobuf Include="Clients\Grpc\ServerProtos\test.proto">
-            <GrpcServices>Server</GrpcServices>
-            <Access>Public</Access>
-            <ProtoCompile>True</ProtoCompile>
-            <CompileOutputs>True</CompileOutputs>
-            <OutputDir>obj\Debug\net7.0\</OutputDir>
-            <Generator>MSBuild:Compile</Generator>
-        </Protobuf>
-    </ItemGroup>
     
     <ItemGroup>
-        <Protobuf Include="Clients\Grpc\ClientProtos\test.proto" GrpcServices="Client" />
-        <Protobuf Include="Clients\Grpc\ServerProtos\test.proto" GrpcServices="Server" />
-    </ItemGroup>
-    
-    <ItemGroup>
-      <Folder Include="EF\Migrations" />
+        <Protobuf Include="Clients\Grpc\ClientProtos\Identity.proto" GrpcServices="Client" />
+<!--        <Protobuf Include="Clients\Grpc\ServerProtos\test.proto" GrpcServices="Server" />-->
     </ItemGroup>
 
 </Project>

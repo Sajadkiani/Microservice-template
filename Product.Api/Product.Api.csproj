@@ -41,6 +41,8 @@
 
   <ItemGroup>
     <Folder Include="Application\IntegrationEvents\EventHandling" />
+    <Folder Include="Filters" />
+    <Folder Include="Grpc" />
   </ItemGroup>
 
   <ItemGroup>
@@ -51,6 +53,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\BuildingBlocks\EventBus\EventBus.csproj" />
+    <ProjectReference Include="..\Product.Infrastructure.Data\Product.Infrastructure.Data.csproj" />
     <ProjectReference Include="..\Product.Infrastructure\Product.Infrastructure.csproj" />
     <ProjectReference Include="..\BuildingBlocks\IntegrationEventLogEF\IntegrationEventLogEF.csproj" />
   </ItemGroup>

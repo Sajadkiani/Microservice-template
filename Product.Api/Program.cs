@@ -3,13 +3,12 @@ using System.Reflection;
 using Autofac;
 using Autofac.Extensions.DependencyInjection;
 using Product.Api;
-using Product.Api.Infrastructure.AutofacModules;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Hosting;
+using Product.Api.AutofacModules;
 using Serilog;
-using Serilog.Formatting.Compact;
 using Serilog.Sinks.Elasticsearch;
 
 var webApplicationBuilder = WebApplication.CreateBuilder(args);

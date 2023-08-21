@@ -1,10 +1,9 @@
 using System;
 using System.Reflection;
 using System.Text;
-using Product.Api.Grpc;
-using Product.Api.Infrastructure.Extensions;
-using Product.Api.Infrastructure.Security;
-using Product.Infrastructure.EF;
+using Identity.Api.Extensions;
+using Identity.Infrastructure.Extensions.Options;
+using IdentityGrpcClient;
 using IntegrationEventLogEF;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -13,10 +12,13 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.IdentityModel.Tokens;
+using Product.Api.Extensions;
+using Product.Api.Security;
+using Product.Infrastructure.Data.EF;
+using Product.Infrastructure.MapperProfiles;
 using Serilog;
 using Steeltoe.Discovery.Client;
 using Steeltoe.Discovery.Eureka;
-using Product.Api.Infrastructure.Extensions.Options;
 
 namespace Product.Api
 {
@@ -72,8 +74,12 @@ namespace Product.Api
             services.AddAppOptions(configuration);
             services.AddMemoryCache();
             services.AddGrpc();
-            services.AddControllers();
-            services.AddAutoMapper(typeof(Startup));
+            services.AddGrpcClient<IdentityGrpc.IdentityGrpcClient>(o =>
+            {
+                o.Address = new Uri(configuration["Grpc:Clients:Identity:Url"]);
+            }); 
+            services.AddControllers(opt => opt.Filters.Add<RequiredClaimsAttribute>());
+            services.AddAutoMapper(typeof(Startup), typeof(AutoMapperInfraProfile));
             services.AddAppSwagger();
         }
 
@@ -95,7 +101,7 @@ namespace Product.Api
 
             app.UseAuthentication();
             app.UseAuthorization();
-            app.MapGrpcService<AuthGrpcService>();
+            // app.MapGrpcService<AuthGrpcService>();
             app.UseEndpoints(endpoints => { endpoints.MapControllers(); });
         }
     }

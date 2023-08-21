@@ -1,10 +1,9 @@
 ﻿using System.Threading;
 using System.Threading.Tasks;
-using Product.Api.Infrastructure.Exceptions;
-using Product.Api.Infrastructure.Extensions;
-using Product.Infrastructure.EF.Idempotency;
+using EventBus.Extensions;
 using MediatR;
 using Microsoft.Extensions.Logging;
+using Product.Infrastructure.Data.EF.Idempotency;
 
 namespace Product.Api.Application.Commands.Common;
 

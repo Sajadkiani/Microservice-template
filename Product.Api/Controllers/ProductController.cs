@@ -1,14 +1,13 @@
 using System.Threading.Tasks;
 using AutoMapper;
 using EventBus.Abstractions;
-using Product.Api.Application.Commands.Users;
-using Product.Api.Application.Queries.Users;
-using Product.Api.Infrastructure.Extensions.Options;
-using Product.Api.Infrastructure.Services;
+using Identity.Infrastructure.Extensions.Options;
+using Microsoft.AspNetCore.Authorization;
 using Product.Api.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Caching.Memory;
 using Microsoft.Extensions.Logging;
+using Product.Api.Security;
 
 namespace Product.Api.Controllers;
 
@@ -37,6 +36,8 @@ public class ProductController : ControllerBase
     }
 
     [HttpPost]
+    [Authorize]
+    [RequiredClaims("sajadkiani1")]
     public async Task<int> AddAsync([FromBody] ProductViewModel.AddProductInput input)
     {
         return 1;
